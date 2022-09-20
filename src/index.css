@@ -19,6 +19,7 @@ html {
 }
 
 body {
+  min-height: 100vh;
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
@@ -30,6 +31,11 @@ body {
     var(--medium-teal) 50%,
     var(--primary-teal) 100%
   );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   overflow: hidden;
 }
 

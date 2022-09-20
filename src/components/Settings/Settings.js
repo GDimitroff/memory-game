@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { CATEGORIES, PACE, INITIAL_CARDS_COUNT } from '../../utils/constants';
 
@@ -55,3 +56,7 @@ const Settings = ({ startGame }) => {
 };
 
 export default Settings;
+
+Settings.propTypes = {
+  startGame: PropTypes.func.isRequired,
+};

@@ -1,0 +1,22 @@
+.modes {
+  display: flex;
+  gap: 28px;
+  padding: 6rem;
+  background-color: var(--dark-teal);
+  border: 2px solid var(--light-teal);
+  border-radius: 6px;
+  box-shadow: 0 8px 32px 0 rgba(0, 1, 10, 0.371);
+}
+
+.mode {
+  padding: 3rem 6rem;
+  background-color: var(--medium-teal);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.mode:hover,
+.mode:active {
+  background-color: var(--light-teal);
+}
