@@ -1,22 +1,35 @@
+.wrapper {
+  animation: 0.8s fade-in;
+}
+
 .modes {
   display: flex;
   gap: 28px;
-  padding: 6rem;
-  background-color: var(--dark-teal);
-  border: 2px solid var(--light-teal);
-  border-radius: 6px;
-  box-shadow: 0 8px 32px 0 rgba(0, 1, 10, 0.371);
 }
 
 .mode {
-  padding: 3rem 6rem;
-  background-color: var(--medium-teal);
+  padding: 1.8rem 3.6rem;
+  background-color: var(--light-teal);
   border-radius: 6px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .mode:hover,
 .mode:active {
-  background-color: var(--light-teal);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.371);
+  background-color: var(--primary-teal);
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

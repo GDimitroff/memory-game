@@ -5,7 +5,7 @@ import useGetImages from './hooks/useGetImages';
 import Background from './components/Background';
 import GameMode from './components/GameModes';
 import Settings from './components/Settings/index.js';
-import ToggleCheckbox from './components/ToggleCheckbox';
+import ToggleCheckbox from './components/UI/ToggleCheckbox';
 
 const App = () => {
   const [gameMode, setGameMode] = useState(null);
@@ -35,14 +35,13 @@ const App = () => {
 
   return (
     <div>
-      <ToggleCheckbox
+      {/* <ToggleCheckbox
         animationON={animation}
         toggleAnimation={handleToggleAnimation}
-      />
+      /> */}
       {animation && <Background />}
-      <h1>Memory Game</h1>
       {!gameMode && <GameMode onSelectGameMode={handleSelectGameMode} />}
-      {gameMode === 'classic' && <Settings startGame={handleStartGame} />}
+      {gameMode && <Settings startGame={handleStartGame} gameMode={gameMode} />}
     </div>
   );
 };
