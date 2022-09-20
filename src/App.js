@@ -1,5 +1,7 @@
-import Background from './components/Background';
 import useGetImages from './hooks/useGetImages';
+
+import Background from './components/Background';
+import Settings from './components/Settings.js';
 
 const App = () => {
   const images = useGetImages();
@@ -9,7 +11,8 @@ const App = () => {
   return (
     <div>
       <Background />
-      <h1>App</h1>
+      <h1>Memory Game</h1>
+      <Settings />
     </div>
   );
 };

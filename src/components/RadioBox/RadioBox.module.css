@@ -1,0 +1,43 @@
+.radio {
+  position: absolute;
+  opacity: 0;
+}
+
+.label {
+  font-size: 1.4rem;
+}
+
+.radio + .label:before {
+  position: relative;
+  display: inline-block;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: var(--primary-light);
+  border: 1px solid #b4b4b4;
+  border-radius: 100%;
+  margin-right: 4px;
+  vertical-align: top;
+  cursor: pointer;
+  transition: all 250ms ease;
+}
+
+.radio:checked + .label:before {
+  background-color: var(--light-teal);
+  box-shadow: inset 0 0 0 4px var(--primary-light);
+}
+
+.radio:focus + .label:before {
+  outline: none;
+  border-color: var(--light-teal);
+}
+
+.radio:disabled + .label:before {
+  box-shadow: inset 0 0 0 4px var(--primary-light);
+  border-color: #b4b4b4;
+  background: #b4b4b4;
+}
+
+.radio + .label:empty:before {
+  margin-right: 0;
+}
