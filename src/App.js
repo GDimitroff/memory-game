@@ -8,11 +8,15 @@ const App = () => {
 
   console.log(images);
 
+  const handleStartGame = (options) => {
+    console.log(options);
+  };
+
   return (
     <div>
       <Background />
       <h1>Memory Game</h1>
-      <Settings />
+      <Settings startGame={handleStartGame} />
     </div>
   );
 };

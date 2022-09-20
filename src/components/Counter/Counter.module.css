@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.plus,
+.minus {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark-teal);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--dark-teal);
+  cursor: pointer;
+}
