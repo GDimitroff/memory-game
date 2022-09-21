@@ -16,8 +16,8 @@ const DIFFICULTIES = {
 };
 
 const useGameLogic = (images, difficulty) => {
-  const [score, setScore] = useState(0);
-  const [winner, setWinner] = useState(false);
+  const [turns, setTurns] = useState(0);
+  const [winner, setWinner] = useState(true);
   const [cards, setCards] = useState([]);
   const [visibleCards, setVisibleCards] = useState([]);
 
@@ -51,10 +51,6 @@ const useGameLogic = (images, difficulty) => {
     }
   };
 
-  const updateScore = () => {
-    setScore((prevScore) => prevScore + 1);
-  };
-
   const checkMatch = () => {
     const visible = cards.filter(
       (card) => visibleCards.indexOf(card.uniqueId) !== -1
@@ -75,27 +71,28 @@ const useGameLogic = (images, difficulty) => {
     setTimeout(() => {
       setCards(updatedCards);
       setVisibleCards([]);
-      if (matched) updateScore();
     }, DIFFICULTIES[difficulty]);
   };
 
   useEffect(() => {
     if (images.length > 0) {
       prepareCards();
+      setTurns(0);
     }
   }, [images]);
 
   useEffect(() => {
     if (visibleCards.length >= MAX_VISIBLE_CARDS) {
+      setTurns((prevTurns) => prevTurns + 1);
       checkMatch();
     }
   }, [visibleCards]);
 
   useEffect(() => {
-    if (images.length > 0 && score === images.length) {
+    if (images.length > 0 && turns === images.length) {
       setWinner(true);
     }
-  }, [score]);
+  }, [turns]);
 
   return { cards, onCardClick, winner };
 };

@@ -1,22 +1,16 @@
 .container {
+  position: relative;
   width: 160px;
   height: 200px;
-  position: relative;
-  perspective: 800px;
   border-radius: 6px;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
 }
 
 .container .found {
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   background: var(--light-teal);
 }
 
 .card {
   width: 160px;
-  border: 1px solid var(--medium-teal);
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
@@ -36,8 +30,6 @@
   justify-content: center;
   align-items: center;
   background: var(--dark-teal);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   transition: all 0.25s ease-in-out;
 }
 
