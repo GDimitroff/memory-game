@@ -29,6 +29,11 @@ const App = () => {
     setGameMode('classic');
   };
 
+  const handleRestartGame = () => {
+    setGameMode(null);
+    setGameOptions(null);
+  };
+
   return (
     <div>
       <div className="animation">
@@ -42,7 +47,9 @@ const App = () => {
       {gameMode && !gameOptions && (
         <Settings startGame={handleStartGame} gameMode={gameMode} />
       )}
-      {gameOptions && <Board gameOptions={gameOptions} />}
+      {gameOptions && (
+        <Board gameOptions={gameOptions} restartGame={handleRestartGame} />
+      )}
     </div>
   );
 };

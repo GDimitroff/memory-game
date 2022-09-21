@@ -1,14 +1,13 @@
-.board {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: flex-start;
-    height: calc(100vh - 60px);
-    width: 100vw;
-    margin-left: 1rem;
-    overflow-x: scroll;
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.board ul {
-    margin: 0;
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
 }

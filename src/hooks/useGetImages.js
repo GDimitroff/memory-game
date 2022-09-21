@@ -24,6 +24,7 @@ const useGetImages = (gameOptions) => {
 
     const fetchData = async () => {
       const url = buildUrl();
+
       const response = await fetch(url, {
         headers: {
           Authorization: process.env.REACT_APP_PEXELS_AUTH_KEY,
