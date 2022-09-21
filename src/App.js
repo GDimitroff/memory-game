@@ -35,10 +35,12 @@ const App = () => {
 
   return (
     <div>
-      {/* <ToggleCheckbox
-        animationON={animation}
-        toggleAnimation={handleToggleAnimation}
-      /> */}
+      <div className="animation">
+        <ToggleCheckbox
+          animationON={animation}
+          toggleAnimation={handleToggleAnimation}
+        />
+      </div>
       {animation && <Background />}
       {!gameMode && <GameMode onSelectGameMode={handleSelectGameMode} />}
       {gameMode && <Settings startGame={handleStartGame} gameMode={gameMode} />}
