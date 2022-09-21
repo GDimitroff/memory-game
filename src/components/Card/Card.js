@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import Image from '../Image';
+import Image from '../Image/Image';
 import styles from './Card.module.css';
 
 const Card = ({ card, onCardClick }) => {
@@ -10,7 +10,7 @@ const Card = ({ card, onCardClick }) => {
   };
 
   return (
-    <div className={`${styles.container}`} onClick={handleClick}>
+    <div className={styles.container} onClick={handleClick}>
       <div className={`${styles.card} ${card.isShown ? styles.flipped : ''}`}>
         <div
           className={`${styles.front} ${

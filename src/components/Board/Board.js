@@ -10,7 +10,7 @@ const Board = ({ gameMode, gameOptions, restartGame }) => {
       {gameMode === 'classic' && (
         <ClassicBoard gameOptions={gameOptions} restartGame={restartGame} />
       )}
-      {gameMode === 'classic' && (
+      {gameMode === 'modern' && (
         <ModernBoard gameOptions={gameOptions} restartGame={restartGame} />
       )}
     </div>

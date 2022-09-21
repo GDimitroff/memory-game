@@ -6,7 +6,7 @@ import useGameLogic from '../../hooks/useGameLogic';
 
 import Result from '../Result';
 import Loader from '../UI/Loader';
-import Card from '../Card';
+import Card from '../Card/Card';
 import styles from './Board.module.css';
 
 const ClassicBoard = ({ gameOptions, restartGame }) => {
