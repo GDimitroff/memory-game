@@ -8,19 +8,24 @@
 }
 
 .mode {
+  position: relative;
+  top: 0px;
   padding: 1.8rem 3.6rem;
-  background-color: var(--light-teal);
+  color: var(--dark-teal);
+  background-color: var(--primary-light);
   border-radius: 12px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease;
   border: 1px solid transparent;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .mode:hover,
 .mode:active {
+  top: -10px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.371);
-  background-color: var(--primary-teal);
+  background-color: var(--light-teal);
+  color: var(--primary-light);
 }
 
 @keyframes fade-in {

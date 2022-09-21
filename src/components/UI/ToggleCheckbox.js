@@ -1,14 +1,10 @@
 import styles from './ToggleCheckbox.module.css';
 
-const ToggleCheckbox = ({ animationON, toggleAnimation }) => {
+const ToggleCheckbox = ({ animation, toggleAnimation }) => {
   return (
     <div className={styles.wrapper}>
       <label className={styles.switch}>
-        <input
-          type="checkbox"
-          checked={animationON}
-          onChange={toggleAnimation}
-        />
+        <input type="checkbox" checked={animation} onChange={toggleAnimation} />
         <span className={styles.slider}></span>
       </label>
       <p>Animations</p>

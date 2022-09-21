@@ -23,13 +23,13 @@
 }
 
 .radio:checked + .label:before {
-  background-color: var(--light-teal);
+  background-color: var(--primary-teal);
   box-shadow: inset 0 0 0 4px var(--primary-light);
 }
 
 .radio:focus + .label:before {
   outline: none;
-  border-color: var(--light-teal);
+  border-color: var(--primary-teal);
 }
 
 .radio:disabled + .label:before {

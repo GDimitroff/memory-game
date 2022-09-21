@@ -13,10 +13,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--dark-teal);
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 1px solid var(--dark-teal);
+  color: var(--primary-light);
+  background-color: var(--medium-teal);
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--medium-teal);
   cursor: pointer;
+}
+
+.quantity {
+  min-width: 18px;
+  text-align: center;
 }

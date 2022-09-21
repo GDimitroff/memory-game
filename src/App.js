@@ -16,6 +16,7 @@ const App = () => {
   console.log(images);
 
   const handleStartGame = (options) => {
+    console.log(options);
     setGameOptions(options);
   };
 
@@ -37,7 +38,7 @@ const App = () => {
     <div>
       <div className="animation">
         <ToggleCheckbox
-          animationON={animation}
+          animation={animation}
           toggleAnimation={handleToggleAnimation}
         />
       </div>
