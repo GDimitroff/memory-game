@@ -1,13 +1,12 @@
 .settings {
   padding: 2rem;
-  background-color: var(--dark-teal);
-  border-radius: 6px;
+  border-radius: 12px;
   box-shadow: 0 6px 28px 0 rgba(0, 0, 0, 0.3);
   animation: 0.8s fade-in;
 }
 
 .settings > div:not(:last-child) {
-  margin-bottom: 2.6rem;
+  margin-bottom: 3.6rem;
 }
 
 @keyframes fade-in {

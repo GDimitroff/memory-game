@@ -10,7 +10,7 @@
 .mode {
   padding: 1.8rem 3.6rem;
   background-color: var(--light-teal);
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   border: 1px solid transparent;
