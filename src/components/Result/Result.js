@@ -6,8 +6,8 @@ import styles from './Result.module.css';
 const Result = ({ restartGame }) => {
   return (
     <div className={styles.container}>
-      <p>Awesome!</p>
-      <Button text="Finish Game" onClick={restartGame} />
+      <p>Winner!</p>
+      <Button text="New Game" onClick={restartGame} />
     </div>
   );
 };

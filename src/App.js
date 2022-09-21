@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import Background from './components/Background';
 import GameMode from './components/GameModes';
-import Settings from './components/Settings/index.js';
-import Board from './components/Board';
+import Settings from './components/Settings/Settings';
+import Board from './components/Board/Board';
 import ToggleCheckbox from './components/UI/ToggleCheckbox';
 
 const App = () => {
@@ -19,14 +19,8 @@ const App = () => {
     setAnimation((prevAnimation) => !prevAnimation);
   };
 
-  const handleSelectGameMode = (gameMode) => {
-    if (gameMode === 'modern') {
-      //TODO: Implement this game mode
-      console.log('modern');
-      return;
-    }
-
-    setGameMode('classic');
+  const handleSelectGameMode = (mode) => {
+    mode === 'modern' ? setGameMode('modern') : setGameMode('classic');
   };
 
   const handleRestartGame = () => {
@@ -48,7 +42,11 @@ const App = () => {
         <Settings startGame={handleStartGame} gameMode={gameMode} />
       )}
       {gameOptions && (
-        <Board gameOptions={gameOptions} restartGame={handleRestartGame} />
+        <Board
+          gameMode={gameMode}
+          gameOptions={gameOptions}
+          restartGame={handleRestartGame}
+        />
       )}
     </div>
   );
