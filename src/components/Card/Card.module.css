@@ -6,7 +6,6 @@
   display: block;
   width: 120px;
   height: 160px;
-  border: 2px solid var(--primary-light);
   border-radius: 6px;
   object-fit: cover;
 }
@@ -16,6 +15,8 @@
   position: absolute;
   transform: rotateY(90deg);
   transition: all ease-in 0.2s;
+  border: 3px solid #e2e8f0;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.371);
 }
 
 .flipped .front {
@@ -25,7 +26,8 @@
 
 /* back of card - cover */
 .card .back {
-  border: 2px solid var(--dark-teal);
+  border: 3px solid #e2e8f0;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.371);
   transition: all ease-in 0.2s;
   transition-delay: 0.2s;
 }

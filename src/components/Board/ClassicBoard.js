@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import useGetImages from '../../hooks/useGetImages';
 import useClassicGame from '../../hooks/useClassicGame';
 
-import Result from '../Result';
 import Loader from '../UI/Loader';
 import Card from '../Card/Card';
+import Button from '../UI/Button';
 import styles from './Board.module.css';
 
 const ClassicBoard = ({ gameOptions, restartGame }) => {
@@ -27,8 +27,11 @@ const ClassicBoard = ({ gameOptions, restartGame }) => {
         <Loader />
       ) : (
         <>
-          <p>Turns: {turns}</p>
-          <Result restartGame={restartGame} />
+          <div className={styles.container}>
+            <p>Turn: {turns}</p>
+            <p>Winner!</p>
+            <Button text="New Game" onClick={restartGame} />
+          </div>
           <div className={styles.board}>
             {cards.map((card) => (
               <Card

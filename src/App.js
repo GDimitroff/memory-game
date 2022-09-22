@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import Background from './components/Background';
-import GameMode from './components/GameModes';
+import Background from './components/Background/Background';
+import GameMode from './components/GameModes/GameModes';
 import Settings from './components/Settings/Settings';
 import Board from './components/Board/Board';
 import ToggleCheckbox from './components/UI/ToggleCheckbox';

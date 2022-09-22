@@ -1,9 +1,8 @@
 :root {
   --primary-light: #f3f4f6;
-  --primary-teal: teal;
-  --dark-teal: #0f2027;
-  --medium-teal: #203a43;
-  --light-teal: #2c5364;
+  --primary-dark: #130f27;
+  --secondary-dark: #202643;
+  --primary-pink: #b61f98;
 }
 
 *,
@@ -24,12 +23,12 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   color: var(--primary-light);
-  background-color: var(--medium-teal);
+  background-color: var(--secondary-dark);
   background-image: linear-gradient(
     to right,
-    var(--dark-teal) 0%,
-    var(--medium-teal) 50%,
-    var(--primary-teal) 100%
+    #130f27 0%,
+    #202643 50%,
+    #b61f98 100%
   );
 
   display: flex;

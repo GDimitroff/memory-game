@@ -8,7 +8,7 @@ import {
 } from '../../utils/constants';
 import Setting from './Setting';
 import RadioBox from '../UI/RadioBox';
-import Counter from '../Counter';
+import Counter from './Counter';
 import Button from '../UI/Button';
 
 const Classic = ({ startGame }) => {
