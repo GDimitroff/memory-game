@@ -24,7 +24,7 @@ const ClassicBoard = ({ gameOptions, restartGame }) => {
   }, [images]);
 
   return (
-    <>
+    <div className={styles.game}>
       {winner && <Result restartGame={restartGame} />}
       {isLoading ? (
         <Loader />
@@ -35,7 +35,7 @@ const ClassicBoard = ({ gameOptions, restartGame }) => {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

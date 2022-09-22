@@ -1,24 +1,20 @@
 import PropTypes from 'prop-types';
 
-import Image from '../Image/Image';
 import styles from './Card.module.css';
+import cover from '../../assets/images/cover.jpg';
 
 const Card = ({ card, onCardClick }) => {
   const handleClick = () => {
     if (card.isShown || card.isFound) return;
+
     onCardClick(card.uniqueId);
   };
 
   return (
-    <div className={styles.container} onClick={handleClick}>
-      <div className={`${styles.card} ${card.isShown ? styles.flipped : ''}`}>
-        <div
-          className={`${styles.front} ${
-            card.isFound ? styles.found : ''
-          }`}></div>
-        <div className={`${styles.back}`}>
-          <Image url={card.url} />
-        </div>
+    <div className={styles.card} onClick={handleClick}>
+      <div>
+        <img className={styles.front} src={card.url} alt="card front" />
+        <img className={styles.back} src={cover} alt="card back" />
       </div>
     </div>
   );

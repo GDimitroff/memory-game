@@ -2,18 +2,18 @@ import PropTypes from 'prop-types';
 
 import ClassicBoard from './ClassicBoard';
 import ModernBoard from './ModernBoard';
-import styles from './Board.module.css';
 
 const Board = ({ gameMode, gameOptions, restartGame }) => {
   return (
-    <div className={styles.wrapper}>
-      {gameMode === 'classic' && (
+    <>
+      {gameMode === 'classic' ? (
         <ClassicBoard gameOptions={gameOptions} restartGame={restartGame} />
+      ) : (
+        gameMode === 'modern' && (
+          <ModernBoard gameOptions={gameOptions} restartGame={restartGame} />
+        )
       )}
-      {gameMode === 'modern' && (
-        <ModernBoard gameOptions={gameOptions} restartGame={restartGame} />
-      )}
-    </div>
+    </>
   );
 };
 

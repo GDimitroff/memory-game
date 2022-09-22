@@ -5,6 +5,7 @@ import GameMode from './components/GameModes';
 import Settings from './components/Settings/Settings';
 import Board from './components/Board/Board';
 import ToggleCheckbox from './components/UI/ToggleCheckbox';
+import styles from './App.module.css';
 
 const App = () => {
   const [gameMode, setGameMode] = useState(null);
@@ -29,26 +30,28 @@ const App = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="animation">
         <ToggleCheckbox
           animation={animation}
           toggleAnimation={handleToggleAnimation}
         />
       </div>
-      {animation && <Background />}
-      {!gameMode && <GameMode onSelectGameMode={handleSelectGameMode} />}
-      {gameMode && !gameOptions && (
-        <Settings startGame={handleStartGame} gameMode={gameMode} />
-      )}
-      {gameOptions && (
-        <Board
-          gameMode={gameMode}
-          gameOptions={gameOptions}
-          restartGame={handleRestartGame}
-        />
-      )}
-    </div>
+      <main className={styles.main}>
+        {animation && <Background />}
+        {!gameMode && <GameMode onSelectGameMode={handleSelectGameMode} />}
+        {gameMode && !gameOptions && (
+          <Settings startGame={handleStartGame} gameMode={gameMode} />
+        )}
+        {gameOptions && (
+          <Board
+            gameMode={gameMode}
+            gameOptions={gameOptions}
+            restartGame={handleRestartGame}
+          />
+        )}
+      </main>
+    </>
   );
 };
 
