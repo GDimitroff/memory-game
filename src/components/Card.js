@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import cover from '../../assets/images/cover.jpg';
+import cover from '../assets/images/cover.jpg';
 import styles from './Card.module.css';
 
 const Card = ({ card, handleChoice, flipped, disabled }) => {

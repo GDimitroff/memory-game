@@ -1,0 +1,29 @@
+.settings {
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px 2px rgba(0, 0, 0, 0.3);
+}
+
+.settings > div:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.settings h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.settings button {
+  margin: 0 auto;
+}
+
+.setting {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 18px;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  background: var(--primary-dark);
+}

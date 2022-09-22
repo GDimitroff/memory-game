@@ -34,6 +34,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
   overflow-x: hidden;
 }
 
@@ -41,18 +42,6 @@ h1 {
   font-size: 3rem;
   text-align: center;
   margin: 3rem 0;
-}
-
-h2 {
-  font-size: 2.2rem;
-}
-
-h3 {
-  font-size: 1.8rem;
-}
-
-h4 {
-  font-size: 1.6rem;
 }
 
 .animation {

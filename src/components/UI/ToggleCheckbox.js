@@ -7,7 +7,7 @@ const ToggleCheckbox = ({ animation, toggleAnimation }) => {
         <input type="checkbox" checked={animation} onChange={toggleAnimation} />
         <span className={styles.slider}></span>
       </label>
-      <p>Animations</p>
+      <p>Animate</p>
     </div>
   );
 };

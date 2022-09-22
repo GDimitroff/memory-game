@@ -6,7 +6,7 @@ import useClassicGame from '../../hooks/useClassicGame';
 
 import Loader from '../UI/Loader';
 import HeaderBoard from './HeaderBoard';
-import Card from '../Card/Card';
+import Card from '../Card';
 import styles from './Board.module.css';
 
 const ClassicBoard = ({ gameOptions, restartGame }) => {
