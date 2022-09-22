@@ -1,13 +1,12 @@
 .card {
   position: relative;
-  box-shadow: 0 4px 28px 0 rgba(0, 0, 0, 0.3);
 }
 
 .card img {
   display: block;
   width: 120px;
   height: 160px;
-  border: 2px solid #fff;
+  border: 2px solid var(--primary-light);
   border-radius: 6px;
   object-fit: cover;
 }

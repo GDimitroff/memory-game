@@ -1,20 +1,25 @@
 import PropTypes from 'prop-types';
 
-import styles from './Card.module.css';
 import cover from '../../assets/images/cover.jpg';
+import styles from './Card.module.css';
 
-const Card = ({ card, onCardClick }) => {
+const Card = ({ card, handleChoice, flipped, disabled }) => {
   const handleClick = () => {
-    if (card.isShown || card.isFound) return;
-
-    onCardClick(card.uniqueId);
+    if (!disabled) {
+      handleChoice(card);
+    }
   };
 
   return (
-    <div className={styles.card} onClick={handleClick}>
-      <div>
+    <div className={styles.card}>
+      <div className={flipped ? styles.flipped : ''}>
         <img className={styles.front} src={card.url} alt="card front" />
-        <img className={styles.back} src={cover} alt="card back" />
+        <img
+          className={styles.back}
+          src={cover}
+          alt="card back"
+          onClick={handleClick}
+        />
       </div>
     </div>
   );
@@ -24,10 +29,9 @@ export default Card;
 
 Card.propTypes = {
   card: PropTypes.shape({
-    uniqueId: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired,
-    isShown: PropTypes.bool.isRequired,
-    isFound: PropTypes.bool.isRequired,
   }),
-  onCardClick: PropTypes.func.isRequired,
+  handleChoice: PropTypes.func.isRequired,
+  flipped: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool.isRequired,
 };

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 
 import useGetImages from '../../hooks/useGetImages';
-import useGameLogic from '../../hooks/useGameLogic';
+import useClassicGame from '../../hooks/useClassicGame';
 
 import Result from '../Result';
 import Loader from '../UI/Loader';
@@ -12,10 +12,8 @@ import styles from './Board.module.css';
 const ClassicBoard = ({ gameOptions, restartGame }) => {
   const [isLoading, setIsLoading] = useState(true);
   const images = useGetImages(gameOptions);
-  const { cards, onCardClick, winner } = useGameLogic(
-    images,
-    gameOptions.difficulty
-  );
+  const { cards, handleChoice, choiceOne, choiceTwo, disabled, turns } =
+    useClassicGame(images, gameOptions.difficulty);
 
   useEffect(() => {
     if (images.length > 0) {
@@ -25,15 +23,26 @@ const ClassicBoard = ({ gameOptions, restartGame }) => {
 
   return (
     <div className={styles.game}>
-      {winner && <Result restartGame={restartGame} />}
       {isLoading ? (
         <Loader />
       ) : (
-        <div className={styles.board}>
-          {cards.map((card) => (
-            <Card key={card.uniqueId} card={card} onCardClick={onCardClick} />
-          ))}
-        </div>
+        <>
+          <p>Turns: {turns}</p>
+          <Result restartGame={restartGame} />
+          <div className={styles.board}>
+            {cards.map((card) => (
+              <Card
+                key={card.uniqueId}
+                card={card}
+                handleChoice={handleChoice}
+                flipped={
+                  card === choiceOne || card === choiceTwo || card.matched
+                }
+                disabled={disabled}
+              />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
