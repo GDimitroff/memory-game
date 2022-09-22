@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 import Background from './components/Background/Background';
-import StartButton from './components/UI/StartButton';
+import StartScreen from './components/StartScreen';
 import Settings from './components/Settings';
 import Board from './components/Board/Board';
 import ToggleCheckbox from './components/UI/ToggleCheckbox';
-import styles from './App.module.css';
 
 const App = () => {
   const [initialLoad, setInitialLoad] = useState(true);
@@ -25,7 +24,7 @@ const App = () => {
   };
 
   return (
-    <main className={styles.main}>
+    <main className="main">
       <div className="animation">
         <ToggleCheckbox
           animation={animation}
@@ -33,7 +32,7 @@ const App = () => {
         />
       </div>
       {animation && <Background />}
-      {initialLoad && <StartButton onClick={() => setInitialLoad(false)} />}
+      {initialLoad && <StartScreen onClick={() => setInitialLoad(false)} />}
       {!initialLoad && !gameOptions && <Settings startGame={handleStartGame} />}
       {!initialLoad && gameOptions && (
         <Board gameOptions={gameOptions} restartGame={handleRestartGame} />

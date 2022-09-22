@@ -84,3 +84,15 @@
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 420px) {
+  .button {
+    min-width: 160px;
+    min-height: 30px;
+  }
+
+  .button::before {
+    min-width: calc(160px + 12px);
+    min-height: calc(30px + 12px);
+  }
+}

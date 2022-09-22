@@ -1,6 +1,6 @@
-import styles from './StartButton.module.css';
+import styles from './StartScreen.module.css';
 
-const StartButton = ({ onClick }) => {
+const StartScreen = ({ onClick }) => {
   return (
     <div className={styles.wrapper}>
       <h1>Memory Game</h1>
@@ -11,4 +11,4 @@ const StartButton = ({ onClick }) => {
   );
 };
 
-export default StartButton;
+export default StartScreen;

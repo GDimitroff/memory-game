@@ -35,7 +35,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 h1 {
@@ -48,4 +48,9 @@ h1 {
   position: absolute;
   right: 20px;
   top: 20px;
+}
+
+.main {
+  max-width: 940px;
+  padding: 3rem;
 }

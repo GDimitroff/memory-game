@@ -20,7 +20,7 @@ const ClassicBoard = ({ gameOptions, restartGame }) => {
     disabled,
     turns,
     gameEnd,
-  } = useClassicGame(images, gameOptions.difficulty);
+  } = useClassicGame(images);
 
   useEffect(() => {
     if (images.length > 0) {
@@ -63,7 +63,6 @@ export default ClassicBoard;
 ClassicBoard.propTypes = {
   gameOptions: PropTypes.shape({
     category: PropTypes.string.isRequired,
-    difficulty: PropTypes.string.isRequired,
     cardsCount: PropTypes.number.isRequired,
   }),
   restartGame: PropTypes.func.isRequired,

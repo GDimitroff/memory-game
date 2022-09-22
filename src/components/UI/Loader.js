@@ -7,7 +7,7 @@ const LoaderSVG = () => (
     height="64"
     viewBox="0 0 44 44"
     xmlns="http://www.w3.org/2000/svg"
-    stroke="#ffffff80">
+    stroke="#b61f98">
     <g fill="none" fillRule="evenodd" strokeWidth="2">
       <circle cx="22" cy="22" r="1">
         <animate

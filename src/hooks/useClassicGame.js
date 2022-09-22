@@ -2,14 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { transformData } from '../utils/helpers';
 
-const DIFFICULTIES = {
-  easy: 1500,
-  medium: 1000,
-  hard: 750,
-  pro: 500,
-};
-
-const useClassicGame = (images, difficulty) => {
+const useClassicGame = (images) => {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
@@ -57,10 +50,10 @@ const useClassicGame = (images, difficulty) => {
         });
         resetTurn();
       } else {
-        setTimeout(() => resetTurn(), DIFFICULTIES[difficulty]);
+        setTimeout(() => resetTurn(), 500);
       }
     }
-  }, [choiceOne, choiceTwo, difficulty]);
+  }, [choiceOne, choiceTwo]);
 
   // prepare and shuffle cards
   useEffect(() => {
