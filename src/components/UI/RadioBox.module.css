@@ -16,7 +16,7 @@
   background: var(--primary-light);
   border: 1px solid #b4b4b4;
   border-radius: 100%;
-  margin-right: 4px;
+  margin-right: 6px;
   vertical-align: top;
   cursor: pointer;
   transition: all 250ms ease;

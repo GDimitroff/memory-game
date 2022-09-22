@@ -12,10 +12,10 @@ import Button from './UI/Button';
 import styles from './Settings.module.css';
 
 const Settings = ({ startGame }) => {
+  const [gameMode, setGameMode] = useState('classic');
   const [category, setCategory] = useState(CATEGORIES[0]);
   const [difficulty, setDifficulty] = useState(DIFFICULTY[0]);
   const [cardsCount, setCardsCount] = useState(INITIAL_CARDS_COUNT);
-  const [gameMode, setGameMode] = useState('classic');
 
   const handleStartGameClick = () => {
     startGame({ category, difficulty, cardsCount, gameMode });
@@ -28,8 +28,16 @@ const Settings = ({ startGame }) => {
       <div className={styles.wrapper}>
         <h4>Game mode:</h4>
         <div className={styles.setting}>
-          <p>classic</p>
-          <p>modern</p>
+          <p
+            className={`${gameMode === 'classic' ? styles.selected : ''}`}
+            onClick={() => setGameMode('classic')}>
+            classic
+          </p>
+          <p
+            className={`${gameMode === 'modern' ? styles.selected : ''}`}
+            onClick={() => setGameMode('modern')}>
+            modern
+          </p>
         </div>
       </div>
 
