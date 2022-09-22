@@ -15,19 +15,30 @@ const useClassicGame = (images, difficulty) => {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
+  const [gameEnd, setGameEnd] = useState(false);
 
   // handle choice
   const handleChoice = (card) => {
     choiceOne && choiceOne !== card ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
-  //reset choice & increase turn
+  // reset choice & increase turn
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
     setTurns((prevTurns) => prevTurns + 1);
     setDisabled(false);
   };
+
+  // check if the game is ended
+  useEffect(() => {
+    if (cards.length > 0) {
+      const gameEnded = cards.every((card) => card.matched === true);
+      if (gameEnded) {
+        setGameEnd(true);
+      }
+    }
+  }, [cards]);
 
   // compare two selected cards
   useEffect(() => {
@@ -64,7 +75,15 @@ const useClassicGame = (images, difficulty) => {
     }
   }, [images]);
 
-  return { cards, handleChoice, choiceOne, choiceTwo, disabled, turns };
+  return {
+    cards,
+    handleChoice,
+    choiceOne,
+    choiceTwo,
+    disabled,
+    turns,
+    gameEnd,
+  };
 };
 
 export default useClassicGame;

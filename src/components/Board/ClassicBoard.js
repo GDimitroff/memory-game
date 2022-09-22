@@ -5,15 +5,22 @@ import useGetImages from '../../hooks/useGetImages';
 import useClassicGame from '../../hooks/useClassicGame';
 
 import Loader from '../UI/Loader';
+import HeaderBoard from './HeaderBoard';
 import Card from '../Card/Card';
-import Button from '../UI/Button';
 import styles from './Board.module.css';
 
 const ClassicBoard = ({ gameOptions, restartGame }) => {
   const [isLoading, setIsLoading] = useState(true);
   const images = useGetImages(gameOptions);
-  const { cards, handleChoice, choiceOne, choiceTwo, disabled, turns } =
-    useClassicGame(images, gameOptions.difficulty);
+  const {
+    cards,
+    handleChoice,
+    choiceOne,
+    choiceTwo,
+    disabled,
+    turns,
+    gameEnd,
+  } = useClassicGame(images, gameOptions.difficulty);
 
   useEffect(() => {
     if (images.length > 0) {
@@ -27,11 +34,11 @@ const ClassicBoard = ({ gameOptions, restartGame }) => {
         <Loader />
       ) : (
         <>
-          <div className={styles.container}>
-            <p>Turn: {turns}</p>
-            <p>Winner!</p>
-            <Button text="New Game" onClick={restartGame} />
-          </div>
+          <HeaderBoard
+            turns={turns}
+            restartGame={restartGame}
+            gameEnd={gameEnd}
+          />
           <div className={styles.board}>
             {cards.map((card) => (
               <Card
