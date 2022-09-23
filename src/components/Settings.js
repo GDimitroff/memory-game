@@ -50,12 +50,14 @@ const Settings = ({ startGame }) => {
         </div>
       </div>
 
-      <div className={styles.wrapper}>
-        <h4>Amount of cards:</h4>
-        <div className={styles.setting}>
-          <Counter cardsCount={cardsCount} onClick={setCardsCount} />
+      {mode === 'classic' && (
+        <div className={styles.wrapper}>
+          <h4>Amount of cards:</h4>
+          <div className={styles.setting}>
+            <Counter cardsCount={cardsCount} onClick={setCardsCount} />
+          </div>
         </div>
-      </div>
+      )}
 
       <Button text="Start" onClick={handleStartGameClick} />
     </section>

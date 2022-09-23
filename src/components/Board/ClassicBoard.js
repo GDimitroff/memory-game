@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Confetti from 'react-confetti';
 
 import useGetImages from '../../hooks/useGetImages';
@@ -50,6 +50,7 @@ const ClassicBoard = ({ options, restartGame }) => {
                   card === choiceOne || card === choiceTwo || card.matched
                 }
                 disabled={disabled}
+                mode="classic"
               />
             ))}
           </div>

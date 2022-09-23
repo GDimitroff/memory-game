@@ -3,19 +3,19 @@ import { useEffect, useState } from 'react';
 import { BASE_URL } from '../utils/constants';
 import { getRandomPage } from '../utils/helpers';
 
-const useGetImages = (gameOptions) => {
+const useGetImages = (options) => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    if (!gameOptions) return;
+    if (!options) return;
 
     const buildUrl = () => {
       let url = new URL(BASE_URL);
       url.search = new URLSearchParams({
-        query: gameOptions.category,
+        query: options.category,
         orientation: 'square',
         size: 'small',
-        per_page: gameOptions.cardsCount / 2,
+        per_page: options.mode === 'classic' ? options.cardsCount / 2 : 12,
         page: getRandomPage(),
       });
 
@@ -36,7 +36,7 @@ const useGetImages = (gameOptions) => {
     };
 
     fetchData();
-  }, [gameOptions]);
+  }, [options]);
 
   return images;
 };

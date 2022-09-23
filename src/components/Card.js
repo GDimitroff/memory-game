@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cover from '../assets/images/cover.jpg';
 import styles from './Card.module.css';
 
-const Card = ({ card, handleChoice, flipped, disabled }) => {
+const Card = ({ card, handleChoice, flipped, disabled, mode }) => {
   const handleClick = () => {
     if (!disabled) {
       handleChoice(card);
@@ -13,13 +13,28 @@ const Card = ({ card, handleChoice, flipped, disabled }) => {
   return (
     <div className={styles.card}>
       <div className={flipped ? styles.flipped : ''}>
-        <img className={styles.front} src={card.url} alt="card front" />
-        <img
-          className={styles.back}
-          src={cover}
-          alt="card back"
-          onClick={handleClick}
-        />
+        {mode === 'classic' && (
+          <>
+            <img className={styles.front} src={card.url} alt="card front" />
+            <img
+              className={styles.back}
+              src={cover}
+              alt="card back"
+              onClick={handleClick}
+            />
+          </>
+        )}
+        {mode === 'modern' && (
+          <>
+            <img
+              className={styles.front}
+              src={card.url}
+              alt="card front"
+              onClick={handleClick}
+            />
+            <img className={styles.back} src={cover} alt="card back" />
+          </>
+        )}
       </div>
     </div>
   );
