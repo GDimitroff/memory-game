@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import Confetti from 'react-confetti';
 
 import useGetImages from '../../hooks/useGetImages';
 import useClassicGame from '../../hooks/useClassicGame';
@@ -33,6 +34,7 @@ const ClassicBoard = ({ options, restartGame }) => {
       {isLoading && <Loader />}
       {!isLoading && (
         <>
+          {gameEnd && <Confetti />}
           <HeaderBoard
             turns={turns}
             restartGame={restartGame}
