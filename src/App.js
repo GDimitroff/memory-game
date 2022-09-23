@@ -9,10 +9,10 @@ import ToggleCheckbox from './components/UI/ToggleCheckbox';
 const App = () => {
   const [initialLoad, setInitialLoad] = useState(true);
   const [animation, setAnimation] = useState(false);
-  const [gameOptions, setGameOptions] = useState(null);
+  const [options, setOptions] = useState(null);
 
   const handleStartGame = (options) => {
-    setGameOptions(options);
+    setOptions(options);
   };
 
   const handleToggleAnimation = () => {
@@ -20,7 +20,7 @@ const App = () => {
   };
 
   const handleRestartGame = () => {
-    setGameOptions(null);
+    setOptions(null);
   };
 
   return (
@@ -33,9 +33,9 @@ const App = () => {
       </div>
       {animation && <Background />}
       {initialLoad && <StartScreen onClick={() => setInitialLoad(false)} />}
-      {!initialLoad && !gameOptions && <Settings startGame={handleStartGame} />}
-      {!initialLoad && gameOptions && (
-        <Board gameOptions={gameOptions} restartGame={handleRestartGame} />
+      {!initialLoad && !options && <Settings startGame={handleStartGame} />}
+      {!initialLoad && options && (
+        <Board options={options} restartGame={handleRestartGame} />
       )}
     </main>
   );

@@ -129,3 +129,14 @@
     border-radius: 50%;
   }
 }
+
+@media screen and (max-width: 540px) {
+  .area {
+    background-image: linear-gradient(
+      to bottom,
+      var(--primary-dark) 0%,
+      var(--secondary-dark) 50%,
+      var(--primary-pink) 100%
+    );
+  }
+}

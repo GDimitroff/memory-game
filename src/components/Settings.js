@@ -8,12 +8,12 @@ import Button from './UI/Button';
 import styles from './Settings.module.css';
 
 const Settings = ({ startGame }) => {
-  const [gameMode, setGameMode] = useState('classic');
+  const [mode, setMode] = useState('classic');
   const [category, setCategory] = useState(CATEGORIES[0]);
   const [cardsCount, setCardsCount] = useState(INITIAL_CARDS_COUNT);
 
   const handleStartGameClick = () => {
-    startGame({ category, cardsCount, gameMode });
+    startGame({ category, cardsCount, mode });
   };
 
   return (
@@ -24,13 +24,13 @@ const Settings = ({ startGame }) => {
         <h4>Game mode:</h4>
         <div className={styles.setting}>
           <p
-            className={`${gameMode === 'classic' ? styles.selected : ''}`}
-            onClick={() => setGameMode('classic')}>
+            className={`${mode === 'classic' ? styles.selected : ''}`}
+            onClick={() => setMode('classic')}>
             classic
           </p>
           <p
-            className={`${gameMode === 'modern' ? styles.selected : ''}`}
-            onClick={() => setGameMode('modern')}>
+            className={`${mode === 'modern' ? styles.selected : ''}`}
+            onClick={() => setMode('modern')}>
             modern
           </p>
         </div>

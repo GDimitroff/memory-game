@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import useGetImages from '../../hooks/useGetImages';
 import useClassicGame from '../../hooks/useClassicGame';
@@ -9,9 +9,9 @@ import HeaderBoard from './HeaderBoard';
 import Card from '../Card';
 import styles from './Board.module.css';
 
-const ClassicBoard = ({ gameOptions, restartGame }) => {
+const ClassicBoard = ({ options, restartGame }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const images = useGetImages(gameOptions);
+  const images = useGetImages(options);
   const {
     cards,
     handleChoice,
@@ -29,10 +29,9 @@ const ClassicBoard = ({ gameOptions, restartGame }) => {
   }, [images]);
 
   return (
-    <div className={styles.game}>
-      {isLoading ? (
-        <Loader />
-      ) : (
+    <>
+      {isLoading && <Loader />}
+      {!isLoading && (
         <>
           <HeaderBoard
             turns={turns}
@@ -54,14 +53,14 @@ const ClassicBoard = ({ gameOptions, restartGame }) => {
           </div>
         </>
       )}
-    </div>
+    </>
   );
 };
 
 export default ClassicBoard;
 
 ClassicBoard.propTypes = {
-  gameOptions: PropTypes.shape({
+  options: PropTypes.shape({
     category: PropTypes.string.isRequired,
     cardsCount: PropTypes.number.isRequired,
   }),

@@ -5,7 +5,7 @@ const StartScreen = ({ onClick }) => {
     <div className={styles.wrapper}>
       <h1>Memory Game</h1>
       <button className={styles.button} onClick={onClick}>
-        Start
+        Play
       </button>
     </div>
   );

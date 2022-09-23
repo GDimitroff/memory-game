@@ -54,3 +54,14 @@ h1 {
   max-width: 940px;
   padding: 3rem;
 }
+
+@media screen and (max-width: 540px) {
+  body {
+    background-image: linear-gradient(
+      to bottom,
+      #130f27 0%,
+      #202643 50%,
+      #b61f98 100%
+    );
+  }
+}
