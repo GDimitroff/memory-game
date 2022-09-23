@@ -30,12 +30,14 @@ const StandardBoard = ({ options, restartGame }) => {
     }
   }, [images]);
 
+  const description = "Find each card's partner!";
+
   return (
     <>
       {isLoading && <Loader />}
       {!isLoading && (
         <>
-          <HeaderBoard text="Turns" value={turns} />
+          <HeaderBoard text="Turns" value={turns} description={description} />
           <div className={styles.board}>
             {cards.map((card) => (
               <Card

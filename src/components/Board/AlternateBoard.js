@@ -22,12 +22,14 @@ const AlternateBoard = ({ options, restartGame }) => {
     }
   }, [images]);
 
+  const description = "Don't click on the same card more than once!";
+
   return (
     <>
       {isLoading && <Loader />}
       {!isLoading && (
         <>
-          <HeaderBoard text="Score" value={score} />
+          <HeaderBoard text="Score" value={score} description={description} />
           <div className={styles.board}>
             {cards.map((card) => (
               <Card
