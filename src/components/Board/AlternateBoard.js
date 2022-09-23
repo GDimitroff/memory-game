@@ -8,6 +8,7 @@ import useAlternateMode from '../../hooks/useAlternateMode';
 import Loader from '../UI/Loader';
 import HeaderBoard from './HeaderBoard';
 import Card from '../Card';
+import Button from '../UI/Button';
 import styles from './Board.module.css';
 
 const AlternateBoard = ({ options, restartGame }) => {
@@ -26,13 +27,7 @@ const AlternateBoard = ({ options, restartGame }) => {
       {isLoading && <Loader />}
       {!isLoading && (
         <>
-          {gameEnd && <Confetti />}
-          <HeaderBoard
-            text="Score"
-            value={score}
-            restartGame={restartGame}
-            gameEnd={gameEnd}
-          />
+          <HeaderBoard text="Score" value={score} />
           <div className={styles.board}>
             {cards.map((card) => (
               <Card
@@ -45,6 +40,8 @@ const AlternateBoard = ({ options, restartGame }) => {
               />
             ))}
           </div>
+          {gameEnd && <Confetti />}
+          {gameEnd && <Button text="New Game" onClick={restartGame} />}
         </>
       )}
     </>

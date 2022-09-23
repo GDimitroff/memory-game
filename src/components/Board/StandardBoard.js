@@ -8,6 +8,7 @@ import useStandardMode from '../../hooks/useStandardMode';
 import Loader from '../UI/Loader';
 import HeaderBoard from './HeaderBoard';
 import Card from '../Card';
+import Button from '../UI/Button';
 import styles from './Board.module.css';
 
 const StandardBoard = ({ options, restartGame }) => {
@@ -34,13 +35,7 @@ const StandardBoard = ({ options, restartGame }) => {
       {isLoading && <Loader />}
       {!isLoading && (
         <>
-          {gameEnd && <Confetti />}
-          <HeaderBoard
-            text="Turns"
-            value={turns}
-            restartGame={restartGame}
-            gameEnd={gameEnd}
-          />
+          <HeaderBoard text="Turns" value={turns} />
           <div className={styles.board}>
             {cards.map((card) => (
               <Card
@@ -55,6 +50,8 @@ const StandardBoard = ({ options, restartGame }) => {
               />
             ))}
           </div>
+          {gameEnd && <Confetti />}
+          {gameEnd && <Button text="New Game" onClick={restartGame} />}
         </>
       )}
     </>
