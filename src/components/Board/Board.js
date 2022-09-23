@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
-import ClassicBoard from './ClassicBoard';
-import ModernBoard from './ModernBoard';
+import StandardBoard from './StandardBoard';
+import AlternateBoard from './AlternateBoard';
 import styles from './Board.module.css';
 
 const Board = ({ options, restartGame }) => {
@@ -9,11 +9,11 @@ const Board = ({ options, restartGame }) => {
 
   return (
     <div className={styles.wrapper}>
-      {mode === 'classic' && (
-        <ClassicBoard options={options} restartGame={restartGame} />
+      {mode === 'standard' && (
+        <StandardBoard options={options} restartGame={restartGame} />
       )}
-      {mode === 'modern' && (
-        <ModernBoard options={options} restartGame={restartGame} />
+      {mode === 'alternate' && (
+        <AlternateBoard options={options} restartGame={restartGame} />
       )}
     </div>
   );

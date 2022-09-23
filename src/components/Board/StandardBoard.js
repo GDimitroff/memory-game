@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import Confetti from 'react-confetti';
 
 import useGetImages from '../../hooks/useGetImages';
-import useClassicGame from '../../hooks/useClassicGame';
+import useStandardMode from '../../hooks/useStandardMode';
 
 import Loader from '../UI/Loader';
 import HeaderBoard from './HeaderBoard';
 import Card from '../Card';
 import styles from './Board.module.css';
 
-const ClassicBoard = ({ options, restartGame }) => {
+const StandardBoard = ({ options, restartGame }) => {
   const [isLoading, setIsLoading] = useState(true);
   const images = useGetImages(options);
   const {
@@ -21,7 +21,7 @@ const ClassicBoard = ({ options, restartGame }) => {
     disabled,
     turns,
     gameEnd,
-  } = useClassicGame(images);
+  } = useStandardMode(images);
 
   useEffect(() => {
     if (images.length > 0) {
@@ -36,7 +36,8 @@ const ClassicBoard = ({ options, restartGame }) => {
         <>
           {gameEnd && <Confetti />}
           <HeaderBoard
-            turns={turns}
+            text="Turns"
+            value={turns}
             restartGame={restartGame}
             gameEnd={gameEnd}
           />
@@ -50,7 +51,7 @@ const ClassicBoard = ({ options, restartGame }) => {
                   card === choiceOne || card === choiceTwo || card.matched
                 }
                 disabled={disabled}
-                mode="classic"
+                mode="standard"
               />
             ))}
           </div>
@@ -60,9 +61,9 @@ const ClassicBoard = ({ options, restartGame }) => {
   );
 };
 
-export default ClassicBoard;
+export default StandardBoard;
 
-ClassicBoard.propTypes = {
+StandardBoard.propTypes = {
   options: PropTypes.shape({
     category: PropTypes.string.isRequired,
     cardsCount: PropTypes.number.isRequired,

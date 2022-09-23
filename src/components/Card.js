@@ -13,7 +13,7 @@ const Card = ({ card, handleChoice, flipped, disabled, mode }) => {
   return (
     <div className={styles.card}>
       <div className={flipped ? styles.flipped : ''}>
-        {mode === 'classic' && (
+        {mode === 'standard' && (
           <>
             <img className={styles.front} src={card.url} alt="card front" />
             <img
@@ -24,7 +24,7 @@ const Card = ({ card, handleChoice, flipped, disabled, mode }) => {
             />
           </>
         )}
-        {mode === 'modern' && (
+        {mode === 'alternate' && (
           <>
             <img
               className={styles.front}

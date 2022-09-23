@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { transformData } from '../utils/helpers';
 
-const useClassicGame = (images) => {
+const useStandardMode = (images) => {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
@@ -79,4 +79,4 @@ const useClassicGame = (images) => {
   };
 };
 
-export default useClassicGame;
+export default useStandardMode;

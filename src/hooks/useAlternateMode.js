@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 
-const useModernGame = (images) => {
+const useAlternateMode = (images) => {
   const [cards, setCards] = useState([]);
   const [choice, setChoice] = useState(null);
   const [score, setScore] = useState(0);
   const [gameEnd, setGameEnd] = useState(false);
 
-  // handle choice
   const handleChoice = (card) => {
     setChoice(card);
   };
@@ -74,4 +73,4 @@ const useModernGame = (images) => {
   };
 };
 
-export default useModernGame;
+export default useAlternateMode;

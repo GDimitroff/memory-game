@@ -15,7 +15,7 @@ const useGetImages = (options) => {
         query: options.category,
         orientation: 'square',
         size: 'small',
-        per_page: options.mode === 'classic' ? options.cardsCount / 2 : 12,
+        per_page: options.mode === 'standard' ? options.cardsCount / 2 : 12,
         page: getRandomPage(),
       });
 

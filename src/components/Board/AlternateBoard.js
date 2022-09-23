@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import Confetti from 'react-confetti';
 
 import useGetImages from '../../hooks/useGetImages';
-import useModernGame from '../../hooks/useModernGame';
+import useAlternateMode from '../../hooks/useAlternateMode';
 
 import Loader from '../UI/Loader';
 import HeaderBoard from './HeaderBoard';
 import Card from '../Card';
 import styles from './Board.module.css';
 
-const ModernBoard = ({ options, restartGame }) => {
+const AlternateBoard = ({ options, restartGame }) => {
   const [isLoading, setIsLoading] = useState(true);
   const images = useGetImages(options);
-  const { cards, handleChoice, gameEnd, score } = useModernGame(images);
+  const { cards, handleChoice, gameEnd, score } = useAlternateMode(images);
 
   useEffect(() => {
     if (images.length > 0) {
@@ -28,7 +28,8 @@ const ModernBoard = ({ options, restartGame }) => {
         <>
           {gameEnd && <Confetti />}
           <HeaderBoard
-            turns={score}
+            text="Score"
+            value={score}
             restartGame={restartGame}
             gameEnd={gameEnd}
           />
@@ -40,7 +41,7 @@ const ModernBoard = ({ options, restartGame }) => {
                 handleChoice={handleChoice}
                 flipped={true}
                 disabled={gameEnd}
-                mode="modern"
+                mode="alternate"
               />
             ))}
           </div>
@@ -50,9 +51,9 @@ const ModernBoard = ({ options, restartGame }) => {
   );
 };
 
-export default ModernBoard;
+export default AlternateBoard;
 
-ModernBoard.propTypes = {
+AlternateBoard.propTypes = {
   options: PropTypes.shape({
     category: PropTypes.string.isRequired,
     cardsCount: PropTypes.number.isRequired,
