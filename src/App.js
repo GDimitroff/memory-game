@@ -8,7 +8,7 @@ import ToggleCheckbox from './components/UI/ToggleCheckbox';
 
 const App = () => {
   const [initialLoad, setInitialLoad] = useState(true);
-  const [animation, setAnimation] = useState(false);
+  const [animation, setAnimation] = useState(true);
   const [options, setOptions] = useState(null);
 
   const handleStartGame = (options) => {
