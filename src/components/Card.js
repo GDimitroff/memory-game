@@ -49,4 +49,5 @@ Card.propTypes = {
   handleChoice: PropTypes.func.isRequired,
   flipped: PropTypes.bool.isRequired,
   disabled: PropTypes.bool.isRequired,
+  mode: PropTypes.string.isRequired,
 };

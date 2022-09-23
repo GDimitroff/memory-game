@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import styles from './StartScreen.module.css';
 
 const StartScreen = ({ onClick }) => {
@@ -12,3 +14,7 @@ const StartScreen = ({ onClick }) => {
 };
 
 export default StartScreen;
+
+StartScreen.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};

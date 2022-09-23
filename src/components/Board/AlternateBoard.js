@@ -52,8 +52,8 @@ export default AlternateBoard;
 
 AlternateBoard.propTypes = {
   options: PropTypes.shape({
+    mode: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    cardsCount: PropTypes.number.isRequired,
   }),
   restartGame: PropTypes.func.isRequired,
 };

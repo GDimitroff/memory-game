@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import styles from './Board.module.css';
 
 const HeaderBoard = ({ text, value }) => {
@@ -11,3 +13,8 @@ const HeaderBoard = ({ text, value }) => {
 };
 
 export default HeaderBoard;
+
+HeaderBoard.propTypes = {
+  text: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+};

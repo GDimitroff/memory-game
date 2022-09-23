@@ -22,5 +22,10 @@ const Board = ({ options, restartGame }) => {
 export default Board;
 
 Board.propTypes = {
+  options: PropTypes.shape({
+    mode: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    cardsCount: PropTypes.number,
+  }),
   restartGame: PropTypes.func.isRequired,
 };

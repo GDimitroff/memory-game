@@ -62,6 +62,7 @@ export default StandardBoard;
 
 StandardBoard.propTypes = {
   options: PropTypes.shape({
+    mode: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     cardsCount: PropTypes.number.isRequired,
   }),

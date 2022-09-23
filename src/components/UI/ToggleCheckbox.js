@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import styles from './ToggleCheckbox.module.css';
 
 const ToggleCheckbox = ({ animation, toggleAnimation }) => {
@@ -13,3 +15,8 @@ const ToggleCheckbox = ({ animation, toggleAnimation }) => {
 };
 
 export default ToggleCheckbox;
+
+ToggleCheckbox.propTypes = {
+  animation: PropTypes.bool.isRequired,
+  toggleAnimation: PropTypes.func.isRequired,
+};
